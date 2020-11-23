@@ -55,7 +55,7 @@ function SingleParty(props) {
               </CardTitle>
 
               <CardSubtitle>
-                <span className="btn btn-outline-dark">Cost ${p.cost}</span>
+                <span className="btn btn-dark">Cost ${p.cost}</span>
               </CardSubtitle>
 
               <CardText>{p.dest}</CardText>
