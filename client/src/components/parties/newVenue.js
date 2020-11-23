@@ -165,7 +165,7 @@ function NewVenue(props) {
             <br />
             <button
               type="button"
-              className="btn btn-outline-dark"
+              className="btn btn-dark"
               onClick={() => history.push("/partyPage")}
             >
               Go to Home
