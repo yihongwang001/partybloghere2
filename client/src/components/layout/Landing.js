@@ -46,18 +46,16 @@ function Landing() {
       <main>
         <div className="row"></div>
 
-        <strong>
-          <h1
-            className="display-5"
-            style={{
-              color: "black",
-              fontWeight: "bold",
-              fontFamily: "Georgia",
-            }}
-          >
-            Log in to find a party
-          </h1>
-        </strong>
+        <h1
+          className="display-5"
+          style={{
+            color: "black",
+            fontWeight: "bold",
+            fontFamily: "Georgia",
+          }}
+        >
+          Log in to find a party
+        </h1>
 
         <br />
         <button
