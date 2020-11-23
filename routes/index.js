@@ -10,6 +10,15 @@ const myDB = require("../db/myMongoDb.js");
 
 router.get("/users", async (req, res) => {
   const posts = await myDB.getUsers();
+
+  res.json(posts);
+});
+
+router.post("/getUser", async (req, res) => {
+  const { firstName, lastName, password } = req.body;
+  const query = { first: firstName, last: lastName, password: password };
+  console.log("query", query);
+  const posts = await myDB.getUsers(query);
   res.json(posts);
 });
 
