@@ -1,9 +1,9 @@
 var express = require("express");
 var session = require("express-session");
 const MongoClient = require("mongodb").MongoClient;
-const mongoURL =
-  "mongodb+srv://lpanavas:Password1@cluster0.b9bcp.mongodb.net/<dbname>?retryWrites=true&w=majority";
-
+const app = require("../app");
+const dotenv = require("dotenv").config();
+const mongoURL = process.env.MONGOLAB_URL || "mongodb://localhost:27017";
 function MyDB() {
   const database = {};
 
@@ -23,9 +23,8 @@ function MyDB() {
 
       const userCollection = DB.collection("userCollection");
       userCollection.insertOne(newUser);
-      req.session.user = newUser;
+
       console.log("user inserted", newUser);
-      req.session.user = newUser;
     };
     database.insertParty = async (newParty) => {
       const DB = client.db("youtubePage");

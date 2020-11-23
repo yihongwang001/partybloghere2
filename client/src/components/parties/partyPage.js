@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import SingleParty from "./singleParty";
 import textbox from "./textbox.css";
-
+import "./textbox.css";
 import {
   Card,
   CardImg,
@@ -14,6 +14,7 @@ import {
   CardFooter,
   Button,
 } from "reactstrap";
+import { ResponsiveEmbed } from "react-bootstrap";
 function Party(props) {
   const [show, setShow] = useState(true);
   const [showUser, setShowUser] = useState(false);
@@ -47,59 +48,53 @@ function Party(props) {
     return parties
       .filter((p) => p.name && p.name.startsWith(search))
       .map((p) => (
-        <div className="card-deck">
-          <Card style={{ width: "20rem", margin: "2rem" }} key={p._id}>
-            <CardImg
-              top
-              width="100%"
-              height="40%"
-              src={p.image}
-              className="card-img-top"
-              alt="party image"
-            />
+        // <div className="card">
+        <Card style={{ margin: "2rem" }} key={p._id}>
+          <CardImg
+            top
+            width="100%"
+            height="40%"
+            src={p.image}
+            className="card-img-top"
+            alt="party image"
+          />
 
-            <CardBody>
-              <CardTitle>
-                <strong>
-                  <p>{p.name}</p>
-                </strong>
-              </CardTitle>
+          <CardBody>
+            <CardTitle>
+              <strong>
+                <p>{p.name}</p>
+              </strong>
+            </CardTitle>
 
-              <CardSubtitle>
-                <span className="btn btn-outline-dark">Cost ${p.cost}</span>
-              </CardSubtitle>
+            <CardSubtitle>
+              <span className="btn btn-outline-dark">Cost ${p.cost}</span>
+            </CardSubtitle>
 
-              <CardText>{p.dest}</CardText>
+            <CardText>{p.dest}</CardText>
 
-              <Button
-                color="success"
-                className="btn btn-dark mr-1"
-                href={p.web}
-              >
-                Party here !
-              </Button>
-              <Button
-                className="btn btn-secondary mr-1"
-                onClick={() => {
-                  setShowComments(true);
-                  setShow(false);
-                  setShowUser(false);
-                  setId(p._id);
-                  console.log("id", id);
-                }}
-              >
-                Comments{" "}
-                <span className="badge badge-light">
-                  {p.commentList.length}
-                </span>
-              </Button>
-            </CardBody>
+            <Button color="success" className="btn btn-dark mr-1" href={p.web}>
+              Party here !
+            </Button>
+            <Button
+              className="btn btn-secondary mr-1"
+              onClick={() => {
+                setShowComments(true);
+                setShow(false);
+                setShowUser(false);
+                setId(p._id);
+                console.log("id", id);
+              }}
+            >
+              Comments{" "}
+              <span className="badge badge-light">{p.commentList.length}</span>
+            </Button>
+          </CardBody>
 
-            <CardFooter className="text">
-              Created by {p.authorLastName}, {p.authorFirstName}
-            </CardFooter>
-          </Card>
-        </div>
+          <CardFooter className="text-muted">
+            Created by {p.authorLastName}, {p.authorFirstName}
+          </CardFooter>
+        </Card>
+        // </div>
       ));
   };
 
@@ -114,70 +109,64 @@ function Party(props) {
           p.authorLastName === lastNameVariable.lastName
       )
       .map((p) => (
-        <div className="card-deck">
-          <Card style={{ width: "20rem", margin: "2rem" }} key={p._id}>
-            <CardImg
-              top
-              width="100%"
-              height="40%"
-              src={p.image}
-              className="card-img-top"
-              alt="party image"
-            />
+        <Card style={{ margin: "2rem" }} key={p._id}>
+          <CardImg
+            top
+            width="100%"
+            height="40%"
+            src={p.image}
+            className="card-img-top"
+            alt="party image"
+          />
 
-            <CardBody>
-              <CardTitle>
-                <strong>
-                  <p>{p.name}</p>
-                </strong>
-              </CardTitle>
+          <CardBody>
+            <CardTitle>
+              <strong>
+                <p>{p.name}</p>
+              </strong>
+            </CardTitle>
 
-              <CardSubtitle>
-                <span className="btn btn-outline-black">Cost ${p.cost}</span>
-              </CardSubtitle>
+            <CardSubtitle>
+              <span className="btn btn-outline-black">Cost ${p.cost}</span>
+            </CardSubtitle>
 
-              <CardText>{p.dest}</CardText>
+            <CardText>{p.dest}</CardText>
 
-              <Button
-                color="dark"
-                className="btn btn-primary mr-1"
-                href={p.web}
-                aria-label="read more about this post"
-              >
-                Party here !
-              </Button>
-              <Button
-                className="btn btn-secondary mr-1"
-                onClick={() => {
-                  setShowComments(true);
-                  setShow(false);
-                  setShowUser(false);
-                  setId(p._id);
+            <Button
+              color="dark"
+              className="btn btn-primary mr-1"
+              href={p.web}
+              aria-label="read more about this post"
+            >
+              Party here !
+            </Button>
+            <Button
+              className="btn btn-secondary mr-1"
+              onClick={() => {
+                setShowComments(true);
+                setShow(false);
+                setShowUser(false);
+                setId(p._id);
 
-                  console.log("id", id);
-                }}
-              >
-                Comments{" "}
-                <span className="badge badge-light">
-                  {p.commentList.length}
-                </span>
-              </Button>
-            </CardBody>
+                console.log("id", id);
+              }}
+            >
+              Comments{" "}
+              <span className="badge badge-light">{p.commentList.length}</span>
+            </Button>
+          </CardBody>
 
-            <CardFooter className="text">
-              Create by {p.authorLastName}, {p.authorFirstName}
-            </CardFooter>
-          </Card>
-        </div>
+          <CardFooter className="text">
+            Create by {p.authorLastName}, {p.authorFirstName}
+          </CardFooter>
+        </Card>
       ));
   };
-
-  //   const renderParties = () => {
 
   return (
     <main>
       <div className="container">
-        <nav class="navbar navbar-expand-xl bg-light sticky-top">
+        <nav class="navbar navbar-expand-xl  sticky-top">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <button
@@ -261,7 +250,7 @@ function Party(props) {
           </div>
         </div>
 
-        {show ? <div className="row">{renderParties()}</div> : ""}
+        {show ? <div className="card-columns">{renderParties()}</div> : ""}
 
         {showUser ? (
           <div>
