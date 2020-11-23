@@ -2,7 +2,7 @@
   height: 40px;
 }
 body {
-  background-color: #f5ead5;
+  background-color: #ffffff;
   z-index: 100;
 }
 
@@ -13,13 +13,13 @@ body {
   background-color: #e69595;
 } */
 .navbar {
-  background-color: #f5ead5;
+  background-color: #f7f6f0;
 }
 .card-body {
-  background-color: #dfc1ce;
+  background-color: #f7f6f0;
 }
 .card-footer {
-  background-color: #dfc1ce;
+  background-color: #f7f6f0;
 }
 canvas {
   position: absolute;
@@ -29,11 +29,11 @@ canvas {
   z-index: -100;
 }
 .btn {
-  background-color: #f5ead5;
+  background-color: #74520c;
 }
 .btn-secondary {
-  background-color: #f5ead5;
+  background-color: #74520c;
 }
 .badge {
-  background-color: #f5ead5;
+  background-color: #74520c;
 }
