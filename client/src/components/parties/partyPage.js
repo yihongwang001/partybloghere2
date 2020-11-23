@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { useHistory } from "react-router-dom";
 import SingleParty from "./singleParty";
-import textbox from "./textbox.css";
+
 import "./textbox.css";
 import {
   Card,
@@ -67,7 +67,7 @@ function Party(props) {
             </CardTitle>
 
             <CardSubtitle>
-              <span className="btn btn-outline-dark">Cost ${p.cost}</span>
+              <span className="btn btn-dark">Cost ${p.cost}</span>
             </CardSubtitle>
 
             <CardText>{p.dest}</CardText>
@@ -86,11 +86,11 @@ function Party(props) {
               }}
             >
               Comments{" "}
-              <span className="badge badge-light">{p.commentList.length}</span>
+              <span className="badge badge-dark">{p.commentList.length}</span>
             </Button>
           </CardBody>
 
-          <CardFooter className="text-muted">
+          <CardFooter className="text">
             Created by {p.authorLastName}, {p.authorFirstName}
           </CardFooter>
         </Card>
@@ -171,7 +171,7 @@ function Party(props) {
             <li class="nav-item">
               <button
                 type="button"
-                className="btn btn-info mr-2"
+                className="btn btn-dark mr-2"
                 onClick={(evt) => {
                   evt.preventDefault();
                   setShow(true);
@@ -180,14 +180,14 @@ function Party(props) {
                 }}
               >
                 <h1>
-                  <span className="badge badge-info">Home</span>
+                  <span className="badge badge-dark">Home</span>
                 </h1>
               </button>
             </li>
             <li class="nav-item">
               <button
                 type="button"
-                className="btn btn-info mr-2"
+                className="btn btn-dark mr-2"
                 onClick={(evt) => {
                   evt.preventDefault();
                   setShow(false);
@@ -196,18 +196,18 @@ function Party(props) {
                 }}
               >
                 <h1>
-                  <span className="badge badge-info">My Posts</span>
+                  <span className="badge badge-dark">My Posts</span>
                 </h1>
               </button>
             </li>
             <li class="nav-item">
               <button
                 type="button"
-                className="btn btn-info mr-2"
+                className="btn btn-dark mr-2"
                 onClick={() => history.push("/newVenue")}
               >
                 <h1>
-                  <span className="badge badge-info">Share New Places</span>
+                  <span className="badge badge-dark">Share New Places</span>
                 </h1>
               </button>
             </li>
@@ -236,19 +236,6 @@ function Party(props) {
           </ul>
         </nav>
         <br />
-        <div>
-          <div class="row">
-            <p>
-              Please enjoy finding your next party. Click on User HomePage to
-              find the parties you have listed. Select Main Page to see all the
-              parties. In the upper left you can add a new party by clicking on
-              the button. If your looking for a specific place, please use the
-              Search bar in the upper right. Finally, feel free to share your
-              opinions on these party places if you have been to them by
-              clicking the comment button on any of the places.
-            </p>
-          </div>
-        </div>
 
         {show ? <div className="card-columns">{renderParties()}</div> : ""}
 
