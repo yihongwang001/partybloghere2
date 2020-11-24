@@ -53,6 +53,8 @@ function NewVenue(props) {
               <label>
                 First Name
                 <br />
+                  // I think it may be better to use 'className' instead of 'class' in React. 
+                  // as class is a keyword in javascript and JSX is an extension of javascript. :)
                 <input
                   type="text"
                   class="form-control"
