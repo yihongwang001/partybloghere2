@@ -6,8 +6,7 @@ The objective of this website was to create an express and Mongodb and backend w
 
 ### Screenshot of page
 
-![Image of Homepage](https://github.com/lpanavas/youtubeTutorial/blob/Liudas/public/images/screenshotOfHomepage.PNG?raw=true)
-
+![Image of Homepage](https://github.com/yihongwang001/partybloghere2/blob/main/image/screenshotOfHomepage.PNG?raw=true)
 #### Instructions to build:
 1. Clone the repository
 1. Do ‘npm install’ separately in youtubeTutorial folder and client folder on command line
