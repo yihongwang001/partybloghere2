@@ -4,6 +4,8 @@ const MongoClient = require("mongodb").MongoClient;
 const app = require("../app");
 const dotenv = require("dotenv").config();
 const mongoURL = process.env.MONGOLAB_URL || "mongodb://localhost:27017";
+
+// review: I love the way that you guys put all database connections in one separate files and reduce the dependencies.
 function MyDB() {
   const database = {};
 
