@@ -71,6 +71,9 @@ const Register = (props) => {
             Registration <br />
             <br />
           </h1>
+          // Good practice to use 'label' in your Form for accessibility requirements.
+          // Well, if there is a situation when we want to display the page on the phone and there is no enough space to place the 'label'
+          // another option could be use 'aria-label="Text"' as an attribute inside Input element.
           <Form className="register-form" onSubmit={handleOnSubmit}>
             <Form.Group controlId="firstName">
               <Form.Label>First Name </Form.Label>
