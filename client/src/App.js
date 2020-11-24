@@ -9,7 +9,10 @@ import Party from "./components/parties/partyPage";
 import NewVenue from "./components/parties/newVenue";
 
 import React from "react";
-
+// Clear structure to render pages by using react-router. It allows navigation without the page refreshing as the user navigates.
+// Apparently, there are many benefits when using react-router, like better use experience and fast rendering time.
+// However, I think it should also be careful when using react-router as the initial loading time could be considerably large. 
+// Plus, there could be unnecessary data download time for unusable views when the application fisrt render.
 const Routes = () => {
   return (
     <Router>
