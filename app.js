@@ -27,6 +27,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "client/build")));
 app.use(session({ secret: "ssshhhhh", saveUninitialized: true, resave: true }));
+// review, the secret string will be better to be placed in the local .env file like db credentials
 
 //this is where you add the folder that the routes access
 // /party is the place where the homescreen will be
