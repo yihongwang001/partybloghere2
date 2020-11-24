@@ -84,7 +84,7 @@ function Party(props) {
                   Party here !
                 </Button>
                 <Button
-                  className="btn btn-secondary mr-1"
+                  className="btn btn-dark mr-1"
                   onClick={() => {
                     setShowComments(true);
                     setShow(false);
@@ -142,7 +142,7 @@ function Party(props) {
                 </CardTitle>
 
                 <CardSubtitle>
-                  <span className="btn btn-black">Cost ${p.cost}</span>
+                  <span className="btn btn-dark">Cost ${p.cost}</span>
                 </CardSubtitle>
 
                 <CardText>{p.dest}</CardText>
@@ -156,7 +156,7 @@ function Party(props) {
                   Party here !
                 </Button>
                 <Button
-                  className="btn btn-secondary mr-1"
+                  className="btn btn-dark mr-1"
                   onClick={() => {
                     setShowComments(true);
                     setShow(false);
@@ -167,7 +167,7 @@ function Party(props) {
                   }}
                 >
                   Comments{" "}
-                  <span className="badge badge-light">
+                  <span className="badge badge-dark">
                     {p.commentList.length}
                   </span>
                 </Button>
@@ -190,7 +190,7 @@ function Party(props) {
             <li class="nav-item">
               <button
                 type="button"
-                className="btn btn-dark mr-2"
+                className="btn  mr-2"
                 onClick={(evt) => {
                   evt.preventDefault();
                   setShow(true);
@@ -206,7 +206,7 @@ function Party(props) {
             <li class="nav-item">
               <button
                 type="button"
-                className="btn btn-dark mr-2"
+                className="btn  mr-2"
                 onClick={(evt) => {
                   evt.preventDefault();
                   setShow(false);
@@ -222,7 +222,7 @@ function Party(props) {
             <li class="nav-item">
               <button
                 type="button"
-                className="btn btn-dark mr-2"
+                className="btn  mr-2"
                 onClick={() => history.push("/newVenue")}
               >
                 <h1>
