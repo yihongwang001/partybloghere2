@@ -71,6 +71,9 @@ const Login = (props) => {
       /*user found in db and match password and email*/
       dbuser[0].first === state.firstName &&
       dbuser[0].password === state.password
+      
+      // review: in my opinion, the check password procerss will be better to be put in the backend logic. Putting such comparison in front end is not secure.
+      // a more proper way is to send user's credentials to express router, and express will check there, and return status codes. And react use that status code to ckeck whether the login is success or not
     ) {
       setLoginStutus({
         ...loginStatus,
