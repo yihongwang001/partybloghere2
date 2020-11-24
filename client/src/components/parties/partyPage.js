@@ -49,52 +49,63 @@ function Party(props) {
       .filter((p) => p.name && p.name.startsWith(search))
       .map((p) => (
         // <div className="card">
-        <Card style={{ margin: "2rem" }} key={p._id}>
-          <CardImg
-            top
-            width="100%"
-            height="40%"
-            src={p.image}
-            className="card-img-top"
-            alt="party image"
-          />
-
-          <CardBody>
-            <CardTitle>
-              <strong>
-                <p>{p.name}</p>
-              </strong>
-            </CardTitle>
-
-            <CardSubtitle>
-              <span className="btn btn-dark">Cost ${p.cost}</span>
-            </CardSubtitle>
-
-            <CardText>{p.dest}</CardText>
-
-            <Button color="success" className="btn btn-dark mr-1" href={p.web}>
-              Party here !
-            </Button>
-            <Button
-              className="btn btn-secondary mr-1"
-              onClick={() => {
-                setShowComments(true);
-                setShow(false);
-                setShowUser(false);
-                setId(p._id);
-                console.log("id", id);
-              }}
+        <div class="container">
+          <div class="card-columns">
+            <Card
+              style={{ height: "620px", width: "20rem", margin: "1rem" }}
+              key={p._id}
             >
-              Comments{" "}
-              <span className="badge badge-dark">{p.commentList.length}</span>
-            </Button>
-          </CardBody>
+              <CardImg
+                top
+                style={{ height: "200px" }}
+                src={p.image}
+                className="card-img-top"
+                alt="party image"
+              />
 
-          <CardFooter className="text">
-            Created by {p.authorLastName}, {p.authorFirstName}
-          </CardFooter>
-        </Card>
-        // </div>
+              <CardBody style={{ height: "350px" }}>
+                <CardTitle>
+                  <strong>
+                    <p>{p.name}</p>
+                  </strong>
+                </CardTitle>
+
+                <CardSubtitle>
+                  <span className="btn btn-dark">Cost ${p.cost}</span>
+                </CardSubtitle>
+
+                <CardText>{p.dest}</CardText>
+
+                <Button
+                  color="success"
+                  className="btn btn-dark mr-1"
+                  href={p.web}
+                >
+                  Party here !
+                </Button>
+                <Button
+                  className="btn btn-secondary mr-1"
+                  onClick={() => {
+                    setShowComments(true);
+                    setShow(false);
+                    setShowUser(false);
+                    setId(p._id);
+                    console.log("id", id);
+                  }}
+                >
+                  Comments{" "}
+                  <span className="badge badge-dark">
+                    {p.commentList.length}
+                  </span>
+                </Button>
+              </CardBody>
+
+              <CardFooter className="text">
+                Created by {p.authorLastName}, {p.authorFirstName}
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
       ));
   };
 
@@ -109,57 +120,65 @@ function Party(props) {
           p.authorLastName === lastNameVariable.lastName
       )
       .map((p) => (
-        <Card style={{ margin: "2rem" }} key={p._id}>
-          <CardImg
-            top
-            width="100%"
-            height="40%"
-            src={p.image}
-            className="card-img-top"
-            alt="party image"
-          />
-
-          <CardBody>
-            <CardTitle>
-              <strong>
-                <p>{p.name}</p>
-              </strong>
-            </CardTitle>
-
-            <CardSubtitle>
-              <span className="btn btn-outline-black">Cost ${p.cost}</span>
-            </CardSubtitle>
-
-            <CardText>{p.dest}</CardText>
-
-            <Button
-              color="dark"
-              className="btn btn-primary mr-1"
-              href={p.web}
-              aria-label="read more about this post"
+        <div class="container">
+          <div class="rows">
+            <Card
+              style={{ height: "620px", width: "20rem", margin: "1rem" }}
+              key={p._id}
             >
-              Party here !
-            </Button>
-            <Button
-              className="btn btn-secondary mr-1"
-              onClick={() => {
-                setShowComments(true);
-                setShow(false);
-                setShowUser(false);
-                setId(p._id);
+              <CardImg
+                top
+                style={{ height: "200px" }}
+                src={p.image}
+                className="card-img-top"
+                alt="party image"
+              />
 
-                console.log("id", id);
-              }}
-            >
-              Comments{" "}
-              <span className="badge badge-light">{p.commentList.length}</span>
-            </Button>
-          </CardBody>
+              <CardBody style={{ height: "350px" }}>
+                <CardTitle>
+                  <strong>
+                    <p>{p.name}</p>
+                  </strong>
+                </CardTitle>
 
-          <CardFooter className="text">
-            Create by {p.authorLastName}, {p.authorFirstName}
-          </CardFooter>
-        </Card>
+                <CardSubtitle>
+                  <span className="btn btn-black">Cost ${p.cost}</span>
+                </CardSubtitle>
+
+                <CardText>{p.dest}</CardText>
+
+                <Button
+                  color="dark"
+                  className="btn btn-primary mr-1"
+                  href={p.web}
+                  aria-label="read more about this post"
+                >
+                  Party here !
+                </Button>
+                <Button
+                  className="btn btn-secondary mr-1"
+                  onClick={() => {
+                    setShowComments(true);
+                    setShow(false);
+                    setShowUser(false);
+                    setId(p._id);
+
+                    console.log("id", id);
+                  }}
+                >
+                  Comments{" "}
+                  <span className="badge badge-light">
+                    {p.commentList.length}
+                  </span>
+                </Button>
+              </CardBody>
+
+              <CardFooter className="text">
+                Create by {p.authorLastName}, {p.authorFirstName}
+              </CardFooter>
+            </Card>
+          </div>
+        </div>
       ));
   };
 
