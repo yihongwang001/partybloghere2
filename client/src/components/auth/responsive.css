@@ -1,3 +1,4 @@
+/* I was wondering if it is better to separate the css file and js file in different folders :) */
 .row::after {
   content: "";
   clear: both;
